@@ -33,16 +33,16 @@ OnGestureListener,OnDoubleTapListener{
 	private static final int SCROLL_OFF=8;
 	private static final int LEFT_PRESS=9;
 	private static final int LEFT_RELEASE=10;
-	private BluetoothAdapter mBluetoothAdapter; //umo¿liwia dostêp do modu³u bluetooth urz¹dzenia
-	// unikalny identyfikator dziêki któremu aplikacja na androida po³¹czy siê z  serwerem
+	private BluetoothAdapter mBluetoothAdapter; //umoï¿½liwia dostï¿½p do moduï¿½u bluetooth urzï¿½dzenia
+	// unikalny identyfikator dziï¿½ki ktï¿½remu aplikacja na androida poï¿½ï¿½czy siï¿½ z  serwerem
 	private static final UUID myUUID=UUID.fromString("04c6093b-0000-1000-8000-00805f9b34fb");
-	 // Adres MAC urz¹dzenia bluetooth na komputerze
-	private static String MACAddress = "44:6D:57:BF:18:93";
-	//Reprezetuje zdalne urz¹dzenie bluetooth (do którego siê chcemy po³¹czyæ)
+	 // Adres MAC urzï¿½dzenia bluetooth na komputerze
+	private static String MACAddress = "";
+	//Reprezetuje zdalne urzï¿½dzenie bluetooth (do ktï¿½rego siï¿½ chcemy poï¿½ï¿½czyï¿½)
 	private BluetoothDevice device;
-	//gniazdo przez które bêd¹ przesy³ane dane do serwera
+	//gniazdo przez ktï¿½re bï¿½dï¿½ przesyï¿½ane dane do serwera
 	private BluetoothSocket bluetoothSocket;
-	//strumien wyjœciowy do którego bêd¹ pakowane dane
+	//strumien wyjï¿½ciowy do ktï¿½rego bï¿½dï¿½ pakowane dane
 	private OutputStream outStream = null;
 	private GestureDetectorCompat mDetector; 
 	private Button leftButton;
@@ -77,12 +77,12 @@ OnGestureListener,OnDoubleTapListener{
 
 		mDetector.setOnDoubleTapListener(this);
 		mBluetoothAdapter=BluetoothAdapter.getDefaultAdapter();
-		//w przypadku gdy urz¹dzenie nie posiada modu³u bluetooth
+		//w przypadku gdy urzï¿½dzenie nie posiada moduï¿½u bluetooth
 		if(mBluetoothAdapter==null)
 		{
-			this.finish();//zakoñcz dzia³anie 
+			this.finish();//zakoï¿½cz dziaï¿½anie 
 		}
-		//sprawdzanie czy bluetooth jest w³¹czony
+		//sprawdzanie czy bluetooth jest wï¿½ï¿½czony
 		if(!mBluetoothAdapter.isEnabled())
 		{
 			Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
